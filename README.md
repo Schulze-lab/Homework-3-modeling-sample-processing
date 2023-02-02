@@ -1,17 +1,16 @@
-# Assignments Week 1
+# Assignments Week 3
 # Introduction
-This assignment aims to get you started in coding with Python, but you can also use any other programming language you prefer. Specifically, you will calculate protein properties for all proteins in the theoretical proteome of an organism of your choice. The goal is to get an overview of how certain protein properties are distributed across a proteome.  
+The goal of this assignment is to mimic part of a typical proteomics sample processing workflow on the bioinformatic side. The two steps that will be covered by this assignment are (i) protein digestion, and (ii) chromatographic separation of peptides.
 # Input data
-Download a reference proteome for an organism of your choice from UniProt. Use that .fasta file as input file.
+The reference proteome of an organism of your choice should be used as input file. The same .fasta file as in HW1 can be used.
 Tasks and output files
-1)	Calculate the molecular weight for all proteins of the proteome that you have downloaded. Save results as an output file, e.g. as a .csv file.
-2)	Calculate the isoelectric point for all proteins of the proteome that you have downloaded. Save results as an output file, e.g. as a .csv file.
-3)	Calculate the hydrophobicity/GRAVY score for all proteins of the proteome that you have downloaded. Save results as an output file, e.g. as a .csv file.
-4)	Plot the distribution of values (i.e. the values for all proteins in the proteome) for at least one of these protein properties. You can also plot multiple properties against each other. Feel free to be creative. Save the plot in an appropriate format.
-5)	Make sure to comment your code, so that others can read and understand it easily. 
-6)	Create (or modify) a README file describing how to run your code. Include requirements (e.g. Python packages that need to be installed) in that description, or as a separate requirements.txt file.
-7)	Commit all your input files, scripts, and result files to your GitHub Classroom repository.
+1)	Perform an in silico digest of all proteins within the input .fasta file. Use trypsin as proteolytic enzyme. You can use existing modules (like pyteomics’ parser.cleave() function) or write your own function that takes into account tryptic cleavage sites (cleaves after K and R, unless followed by P). Save the resulting peptides as a csv file.
+2)	For the resulting peptides, determine the percentage of peptides that could originate from different proteins (i.e. peptides that are not specific to a single protein). What is the distribution of peptide lengths for these so called non-proteotypic peptides (a graphical representation would be best)?
+3)	Calculate the theoretical retention time (on a standard C18 RP-HPLC) for all peptides using either an additive model (e.g. pyteomics’ achrom module) or a machine learning based model (e.g. DeepLC, or AutoRT). Plot the resulting retention times.
+4)	Make sure to comment your code, so that others can read and understand it easily. 
+5)	Create a README file describing how to run your code. Include requirements (e.g. Python packages that need to be installed) in that description, or as a separate requirements.txt file.
+6)	Commit all your input files, scripts, and result files to your GitHub Classroom repository.
 # Submission
-You must submit the assignment through GitHub Classroom by 8 am January 26 to get full credit. 
+You must submit the assignment through GitHub Classroom by 8 am Feb 9 to get full credit. 
 # Bonus Credit
-8)	Use a prediction tool (e.g. DeepTMHMM, or SignalP 6) to predict the localization/secretion of all proteins in the proteome. Based on these results, group the proteome into categories (e.g. cytosolic, membrane, secreted, …) and compare the hydrophobicity distributions for each of those categories by plotting them together.
+8)	When plotting the retention time of all peptides (task 3), take into account that peptides elute ideally with a Gaussian distribution (see image below). Let’s assume that the peak width is 30 seconds, and the maximum retention time is 60 min. What is the percentage of peptides that have theoretically overlapping elution peaks? How does that number of overlapping peaks change if we increase the maximum retention time to 120 min (with in increase in peak width to 35 seconds due to increased diffusion)? 
