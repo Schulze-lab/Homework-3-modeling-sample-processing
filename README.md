@@ -13,4 +13,4 @@ Tasks and output files
 # Submission
 You must submit the assignment through GitHub Classroom by 8 am Feb 9 to get full credit. 
 # Bonus Credit
-8)	When plotting the retention time of all peptides (task 3), take into account that peptides elute ideally with a Gaussian distribution (see image below). Let’s assume that the peak width is 30 seconds, and the maximum retention time is 60 min. What is the percentage of peptides that have theoretically overlapping elution peaks? How does that number of overlapping peaks change if we increase the maximum retention time to 120 min (with in increase in peak width to 35 seconds due to increased diffusion)? 
+7)	When plotting the retention time of all peptides (task 3), take into account that peptides elute ideally with a Gaussian distribution (see image below). Let’s assume that the peak width is 30 seconds, and the maximum retention time is 60 min. What is the percentage of peptides that have theoretically overlapping elution peaks? How does that number of overlapping peaks change if we increase the maximum retention time to 120 min (with in increase in peak width to 35 seconds due to increased diffusion)? 
